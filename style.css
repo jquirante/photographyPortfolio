@@ -6,7 +6,14 @@ body {
     width: 100vw;
 }
 
+.pageContainer {
+    background-color: black;
+    height: 100%;
+    width: 100%;
+}
+
 #photoContainer {
+    font-size: 0;
     background-color: black;
     height: 85%;
     width: 100%;
@@ -21,7 +28,6 @@ body {
 
 .imageContainer {
     display: inline-block;
-    margin: .5%;
     height: 100%;
     width: 33.3%;
 }

@@ -12,33 +12,48 @@ function startGallery() {
 
 function fillPageWithPhotos(arrayOfPhotos) {
     console.log('fillPhotos');
-
     for ( var row = 0 ; row < 3; row ++ ) {
         var rowContainer = $('<div>', {
-            'background-color': 'yellow',
+            css: {
+                'font-size': '0',
+            },
             height: '33.3%',
             width: '100%',
         });
+
         $('#photoContainer').append(rowContainer);
+       
+       for ( var photo = 0; photo < arrayOfPhotos.length; photo ++ ) {
+
+            var imageContainer = $('<div>', {
+                css: {
+                    'border' : '1px solid black',
+                    'background-color': 'yellow',
+                    'box-sizing': 'border-box',
+                     display: 'inline-block',
+                },
+                
+                class: "imageContainer",
+                height: '100%',
+                width: '33.3%',
+            });
+
+            var image = $('<div>', {
+                class: "image",
+                height: '100%',
+                width: '100%',
+                src: arrayOfPhotos[photo],
+            });
+
+            imageContainer.append(image);
+            rowContainer.append(imageContainer);
+
+       
+        }
+        
+        
     }
 
-    for ( var photo = 0; photo < arrayOfPhotos.length; photo ++ ) {
-        var imageContainer = $('<div>', {
-            display: 'inline-block',
-            class: "imageContainer",
-            height: '100%',
-            width: '33.3%',
-        });
-
-        var image = $('<div>', {
-            class: "image",
-            height: '100%',
-            width: '33.3%',
-            src: arrayOfPhotos[photo],
-        });
-
-        imageContainer.append(image);
-        rowContainer.append(imageContainer);
-    }
+    
 
 }
